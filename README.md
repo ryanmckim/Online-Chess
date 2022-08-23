@@ -11,5 +11,3 @@ In my project, I am:
 * Using Socket.IO to improve the bi-directional connection between the web client and server.
 * Using MySQL to store user profiles for a login system.
 * Deploying the frontend to Google Firebase and backend to Heroku.
- 
- Created by Ryan Kim.
