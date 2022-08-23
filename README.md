@@ -1,4 +1,4 @@
-# Online-Chess
+Online Chess
 =============
 
 Online chess is a fullstack website for users to play chess with random users online.
