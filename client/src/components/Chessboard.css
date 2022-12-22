@@ -1,4 +1,12 @@
+.board-container {
+    padding: 2vh 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
-    background: blue;
-    padding: 10vh 10vw;
-  }
+  width: 400px;
+  height: 400px;
+  background: green;
+}
