@@ -19,18 +19,17 @@
   background: linear-gradient(100deg, #CCB3D1, #752e8f);
 }
 
-.buttons {
+.sidebar-item {
   display: flex;
   flex-direction: column;
-}
-
-.account {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25vh 0;
 }
 
 .sidebar-header {
   font-size: 12px;
+  margin: 2vh 0;
 }
 
 .app {
