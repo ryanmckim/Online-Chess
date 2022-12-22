@@ -7,9 +7,7 @@ import Sidebar from "./components/Sidebar";
 function App() {
     return (
         <div className="main-content">
-            <div className="sidebar">
-                <Sidebar />
-            </div>
+            <Sidebar />
             <div className="app">
                 <Header />
                 <Chessboard />
