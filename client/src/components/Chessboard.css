@@ -8,5 +8,10 @@
 .board {
   width: 400px;
   height: 400px;
-  background: green;
+  background: grey;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  border-radius: 12px;
+    
 }
