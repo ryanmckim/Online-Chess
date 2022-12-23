@@ -1,4 +1,7 @@
 import "./Chessboard.css";
+import "../models/game";
+import "../models/piece";
+import "../models/square";
 
 const Chessboard = () => {
     return (
