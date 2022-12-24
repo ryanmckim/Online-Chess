@@ -1,14 +1,11 @@
 import Square from "./square";
 
-type Nullable<T> = T | null;
-
-export const enum Type {
-    pawn = 0, rook = 1, knight = 2, bishop = 3, king = 4, queen = 5
+export enum Type {
+    pawn = 1, rook = 5, knight = 4, bishop = 3, king = 0, queen = 8
 }
 
-export const enum Colour {
-    white = 0, 
-    black = 1
+export enum Colour {
+    white, black
 }
 
 export class Piece {
@@ -16,7 +13,8 @@ export class Piece {
     private y: number;
     private type: Type;
     private colour: Colour;
-    private square: Nullable<Square>;
+    private square: Square | null;
+    private firstMove: boolean;
 
     constructor(x: number, y: number, colour: Colour, type: Type) {
         this.x = x; // int 0 < x < 7
@@ -24,6 +22,7 @@ export class Piece {
         this.type = type;
         this.colour = colour;
         this.square = null;
+        this.firstMove = true;
     }
 
     getLocation() { return [this.x, this.y]; }
@@ -40,6 +39,12 @@ export class Piece {
         this.y = newSquare.getCoord()[1];
         this.square = newSquare; 
         newSquare.setPiece(this);
+    }
+
+    isFirstMove() { return this.firstMove; }
+
+    setHasMoved() {
+        this.firstMove = false;
     }
 
     // Pawn Promotion

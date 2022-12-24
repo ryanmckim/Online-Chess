@@ -1,9 +1,9 @@
 import "./Chessboard.css";
-import "../models/game";
-import "../models/piece";
-import "../models/square";
+import Game from "../models/game";
 
 const Chessboard = () => {
+    // var game = new Game();
+
     return (
         <div className="board-container app-item">
             <div className="board"></div>

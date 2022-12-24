@@ -1,11 +1,9 @@
 import Piece from "./piece";
 
-type Nullable<T> = T | null;
-
 export class Square {
     private x: number;
     private y: number;
-    private piece: Nullable<Piece>;
+    private piece: Piece | null;
 
     constructor(x: number, y: number) {
         this.x = x; // int 0 < x < 7
@@ -30,4 +28,4 @@ export class Square {
     }
 }
 
-export default Square
+export default Square;
