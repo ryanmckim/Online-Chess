@@ -1,8 +1,10 @@
 import "./Chessboard.css";
-import Game from "../models/game";
+
+import React, { useState } from 'react';
 
 const Chessboard = () => {
-    // var game = new Game();
+
+    const [board, setBoard] = useState([[],[],[],[],[],[],[],[]]);
 
     return (
         <div className="board-container app-item">
