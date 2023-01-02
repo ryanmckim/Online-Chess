@@ -9,9 +9,12 @@
   width: 400px;
   height: 400px;
   background: grey;
+  border-radius: 12px;
+  display: flex;
+
+  /*
   display: grid;
   grid-template-columns: repeat(8, 50px);
   grid-template-rows: repeat(8, 50px);
-  border-radius: 12px;
-    
+  */
 }
