@@ -1,35 +1,25 @@
 import "./Chessboard.css";
 import React, { useState } from 'react';
 import Square from "./Square";
+import "../model/piece"
+import "../model/square"
 
 const Chessboard = ({gameState}) => {
 
     const [board, setBoard] = useState(gameState);
 
-
-    let count = 0;
-    let rowCount = 0;
+    let count = -1;
 
     // init map function
     const createRow = (square) => {
 
-        let boardColour;
+        count ++;
+        const {colour, piece} = square;
+        const {colour: pieceColour, type} = piece;
 
-        const {type, colour} = square;
-
-        if (count % 2 == rowCount) {
-            boardColour = "white";
-        } else {
-            boardColour = "black"
-        }
-        count++;
-
-        if (count%8 == 0) {
-            rowCount++;
-        }
 
         return (
-          <Square type={type} boardColour={boardColour} colour={colour}></Square>
+          <Square key={count} type={type} boardColour={colour} pieceColour={pieceColour}></Square>
         );
       }
 

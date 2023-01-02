@@ -7,32 +7,32 @@ import Bishop from "./pieces/Bishop";
 import Queen from "./pieces/Queen";
 import King from "./pieces/King";
 
-const Square = ({type, boardColour, colour}) => {
+const Square = ({type, boardColour, pieceColour}) => {
     switch(type) {
         
         case 0:
-            return <Pawn colour = {colour} boardColour = {boardColour}></Pawn>;
+            return <King colour = {pieceColour} boardColour = {boardColour}></King>;
             
         case 1:
-            return <Rook colour = {colour} boardColour = {boardColour}></Rook>;
+            return <Pawn colour = {pieceColour} boardColour = {boardColour}></Pawn>;
             
-        case 2:
-            return <Knight colour = {colour} boardColour = {boardColour}></Knight>;
-
         case 3:
-            return <Bishop colour = {colour} boardColour = {boardColour}></Bishop>;
+            return <Bishop colour = {pieceColour} boardColour = {boardColour}></Bishop>;
 
         case 4:
-            return <King colour = {colour} boardColour = {boardColour}></King>;
+            return <Knight colour = {pieceColour} boardColour = {boardColour}></Knight>;
 
         case 5:
-            return <Queen colour = {colour} boardColour = {boardColour}></Queen>;
+            return <Rook colour = {pieceColour} boardColour = {boardColour}></Rook>;
+
+        case 8:
+            return <Queen colour = {pieceColour} boardColour = {boardColour}></Queen>;
 
         default:
-            if (backgroundColour == "black") { // black
-                return <div class="board-space" style="background-color: black"></div>;
+            if (boardColour) { // black
+                return <div class="board-space" style= {{backgroundColor: "black"}}></div>;
             } else {  // white
-                return <div class="board-space" style ="background-color: white"></div>
+                return <div class="board-space" style= {{backgroundColor: "white"}}></div>
             }
     }
 };
