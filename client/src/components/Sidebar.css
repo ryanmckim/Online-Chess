@@ -1,0 +1,25 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 8vw;
+    justify-content: center;
+    backdrop-filter: sepia(80%);
+  }
+
+.sidebar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25vh 0;
+  }
+  
+  .sidebar-header {
+    font-size: 12px;
+    margin: 2vh 0;
+  }
+  

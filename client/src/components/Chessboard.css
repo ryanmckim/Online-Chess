@@ -1,0 +1,51 @@
+.board-container {
+    padding: 2vh 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+  background: grey;
+  display: grid;
+
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  border-radius: 12px;
+    
+}
+
+
+#row-1 {
+  background-color: red;
+}
+
+#row-2 {
+  background-color: orange;
+}
+
+#row-3 {
+  background-color: yellow;
+}
+
+#row-4 {
+  background-color: lightgreen;
+}
+
+#row-5 {
+  background-color: green;
+}
+
+#row-6 {
+  background-color: blue;
+}
+
+#row-7 {
+  background-color: purple;
+}
+
+#row-8 {
+  background-color: indigo;
+}
