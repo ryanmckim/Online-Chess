@@ -13,8 +13,6 @@ const Chessboard = ({gameState = [[],[],[],[],[],[],[],[],]}) => {
     let game = new Game();
     let board = game.getBoard();
 
- //   let board = [[new Square(5,5,1), new Square(1,1,7)],[new Square(2,2,2)],[],[],[],[],[],[],];
-
     let count = -1;
 
     // init map function
@@ -34,6 +32,8 @@ const Chessboard = ({gameState = [[],[],[],[],[],[],[],[],]}) => {
             pieceColour = null;
             type = null;
         }
+
+        console.log(count, square);
 
         return (
           <SquareComponent key={count} type={type} boardColour={colour} pieceColour={pieceColour}></SquareComponent>

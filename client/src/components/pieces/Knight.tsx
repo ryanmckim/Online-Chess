@@ -11,14 +11,14 @@ const Knight = ({colour, boardColour} : Props) => {
 
     let imgSrc;
 
-    if (boardColour) {
+    if (colour) {
         imgSrc = "../../../public/images/ChessPieces/BlackPieces/BlackKnight.png" // black
     } else {
         imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteKnight.png" // white
     }
 
     
-    if (colour) { // black
+    if (boardColour) { // black
         return (
         <div className="board-space" style={{backgroundColor: "black"}}>
             <img src={imgSrc} alt="Knight" className="knight-piece"></img> 

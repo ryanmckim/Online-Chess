@@ -21,7 +21,7 @@ const Bishop = ({colour, boardColour} : Props) => {
     if (boardColour) { // black
         return (
         <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={imgSrc} alt="Bishop" className="bishop-piece"></img> 
+            <img src={require(imgSrc)} alt="Bishop" className="bishop-piece"></img> 
         </div>
     );
     } else { // white

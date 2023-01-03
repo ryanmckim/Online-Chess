@@ -1,4 +1,4 @@
-import "./Queen.css";
+import "./Rook.css";
 import React from "react";
 import {Colour} from "../../model/piece";
 
@@ -7,31 +7,31 @@ type Props = {
     boardColour : Colour
 };
 
-const Queen = ({colour, boardColour} : Props) => {
+const Rook = ({colour, boardColour} : Props) => {
 
     let imgSrc;
 
-    if (boardColour) {
-        imgSrc = "../../../public/images/ChessPieces/BlackPieces/BlackRook.png" // black
+    if (colour) {
+        imgSrc = "../../..public/images/ChessPieces/BlackPieces/BlackRook.png" // black
     } else {
         imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteRook.png" // white
     }
 
 
-    if (colour) { // black
+    if (boardColour) { // black
         return (
         <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={imgSrc} alt="Queen" className="queen-piece"></img> 
+            <img src={imgSrc} alt="Rook" className="rook-piece"></img> 
         </div>
     );
     } else { // white
     return (
         <div className="board-space" style={{backgroundColor: "white"}}>
-            <img src={imgSrc} alt="Queen" className="queen-piece"></img>
+            <img src={imgSrc} alt="Rook" className="rook-piece"></img>
         </div>
         );
     }
 };
 
 
-export default Queen;
+export default Rook;

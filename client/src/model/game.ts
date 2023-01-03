@@ -25,10 +25,10 @@ class Game {
             this.board[i] = [];
             for(var j = 0; j < 8; j++) {
                 this.board[i][j] = new Square(i, j, colour);
-                if (colour = Colour.white) { colour = Colour.black; }
+                if (colour == Colour.white) { colour = Colour.black; }
                 else { colour = Colour.white; } 
             }
-            if (colour = Colour.white) { colour = Colour.black; }
+            if (colour == Colour.white) { colour = Colour.black; }
             else { colour = Colour.white; } 
         }
         var whiteRook1 = new Piece(7, 0, Colour.white, Type.rook);
