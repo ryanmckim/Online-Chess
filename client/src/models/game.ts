@@ -105,7 +105,7 @@ class Game {
 
         // this.render();
         var a: Square[] | undefined = this.getMovableSpaces(this.board[2][4].getPiece(), false);
-        console.log(a);
+        // console.log(a);
     }
 
     upMove(a: number, b: number): number { return a - b; }

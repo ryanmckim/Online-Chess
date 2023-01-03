@@ -1,25 +1,24 @@
+import React, { useState, useEffect } from "react";
 import "./Chessboard.css";
 import Game from "../models/game";
-import Piece from "../models/piece";
-import {Colour} from '../models/piece';
 import {Type} from '../models/piece';
 import Square from "../models/square";
-
-import React, { useState } from "react";
 
 const Chessboard = () => {
     const [board, setBoard] = useState<Square[][]>([[],[],[],[],[],[],[],[]]);
 
     let game = new Game();
-    // setBoard(game.getBoard());
 
+    useEffect(() => {
+        setBoard(game.getBoard());
+    }, []);
 
     function generateBoard(board: Square[][]) {
         return board.map((row: Square[], index) => <div key={"row" + (index+1)} className={"row" + (index+1)} >{determineRow(row)}</div>);
     }
     
     function determineRow(row: Square[]) {
-        return row.map((square: Square) => <div className="square">{determinePiece(square)}</div>);
+        return row.map((square: Square, index) => <div key={"col" + (index+1)} className={"col" + (index+1)}>{determinePiece(square)}</div>);
     }
     
     function determinePiece(square: Square) {
