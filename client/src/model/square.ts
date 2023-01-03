@@ -26,6 +26,8 @@ export class Square {
         this.colour = colour;
     }
 
+    getColour() { return this.colour; }
+
     removePiece() {
         this.piece = null;
     }

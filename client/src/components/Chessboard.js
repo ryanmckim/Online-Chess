@@ -1,12 +1,13 @@
 import "./Chessboard.css";
 import React, { useState } from 'react';
 import Square from "./Square";
-import "../model/piece"
-import "../model/square"
+import SquareClass from "../model/square";
 
-const Chessboard = ({gameState}) => {
+const Chessboard = ({gameState = [[],[],[],[],[],[],[],[],]}) => {
 
     const [board, setBoard] = useState(gameState);
+
+    //let board = [[new SquareClass(5,5,1)],[],[],[],[],[],[],[],];
 
     let count = -1;
 
@@ -21,7 +22,8 @@ const Chessboard = ({gameState}) => {
         return (
           <Square key={count} type={type} boardColour={colour} pieceColour={pieceColour}></Square>
         );
-      }
+    }
+      
 
     return (
         <div className="board-container app-item">
