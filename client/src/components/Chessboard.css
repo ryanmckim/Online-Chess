@@ -11,10 +11,16 @@
   background: grey;
   border-radius: 12px;
   display: flex;
+  flex-direction: column;
 
   /*
   display: grid;
   grid-template-columns: repeat(8, 50px);
   grid-template-rows: repeat(8, 50px);
   */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }

@@ -14,18 +14,17 @@ const Chessboard = () => {
     }, []);
 
     function generateBoard(board: Square[][]) {
-        return board.map((row: Square[], index) => <div key={"row" + (index+1)} className={"row" + (index+1)} >{determineRow(row)}</div>);
+        return board.map((row: Square[], index) => <div key={"row" + (index+1)} className={"row row" + (index+1)} >{determineRow(row)}</div>);
     }
     
     function determineRow(row: Square[]) {
-        return row.map((square: Square, index) => <div key={"col" + (index+1)} className={"col" + (index+1)}>{determinePiece(square)}</div>);
+        return row.map((square: Square, index) => <div key={"col" + (index+1)} className={"col col" + (index+1)}>{determinePiece(square)}</div>);
     }
     
     function determinePiece(square: Square) {
-        return <h1 className="piece">Hello</h1>
         switch (square.getPiece()?.getType()) {
             case Type.pawn:
-                return <h1>King</h1>
+                return <h1>Pawn</h1>
             case Type.rook:
                 return <h1>Rook</h1>
             case Type.knight:
