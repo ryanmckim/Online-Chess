@@ -1,36 +1,36 @@
 import "./Rook.css";
+import "./Piece.css"
 import React from "react";
 import {Colour} from "../../models/piece";
 
 type Props = {
-    colour : Colour|null,
+    colour : Colour|undefined,
     boardColour : Colour
 };
 
+
 const Rook = ({colour, boardColour} : Props) => {
 
-    let imgSrc;
+    let pieceClass;
+    let spaceClass;
 
-    if (colour) {
-        imgSrc = "../../..public/images/ChessPieces/BlackPieces/BlackRook.png" // black
+    if (colour == Colour.white) {
+        pieceClass = "white-rook";
     } else {
-        imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteRook.png" // white
+        pieceClass = "black-rook";
     }
 
+    if (boardColour == Colour.white) {
+        spaceClass = "white-space";
+    } else {
+        spaceClass = "black-space";
+    }
 
-    if (boardColour) { // black
-        return (
-        <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={imgSrc} alt="Rook" className="rook-piece"></img> 
-        </div>
-    );
-    } else { // white
     return (
-        <div className="board-space" style={{backgroundColor: "white"}}>
-            <img src={imgSrc} alt="Rook" className="rook-piece"></img>
+        <div className={"board-space " + spaceClass}>
+            <div className={"board-piece " + pieceClass}></div>
         </div>
-        );
-    }
+    )
 };
 
 

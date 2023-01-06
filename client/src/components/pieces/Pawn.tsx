@@ -14,9 +14,9 @@ const Pawn = ({colour, boardColour} : Props) => {
     let spaceClass;
 
     if (colour == Colour.white) {
-        pieceClass = "white-piece";
+        pieceClass = "white-pawn";
     } else {
-        pieceClass = "black-piece";
+        pieceClass = "black-pawn";
     }
 
     if (boardColour == Colour.white) {

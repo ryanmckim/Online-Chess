@@ -1,0 +1,7 @@
+.white-bishop {
+    background-image: url('../../images/ChessPieces/WhitePieces/WhiteBishop.png');
+}
+
+.black-bishop {
+    background-image: url('../../images/ChessPieces/BlackPieces/BlackBishop.png');
+}

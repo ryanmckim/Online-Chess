@@ -1,36 +1,35 @@
 import "./Queen.css";
+import "./Piece.css"
 import React from "react";
 import {Colour} from "../../models/piece";
 
 type Props = {
-    colour : Colour|null,
+    colour : Colour|undefined,
     boardColour : Colour
 };
 
 const Queen = ({colour, boardColour} : Props) => {
 
-    let imgSrc;
+    let pieceClass;
+    let spaceClass;
 
-    if (colour) {
-        imgSrc = "../../../public/images/ChessPieces/BlackPieces/BlackQueen.png" // black
+    if (colour == Colour.white) {
+        pieceClass = "white-queen";
     } else {
-        imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteQueen.png" // white
+        pieceClass = "black-queen";
     }
 
+    if (boardColour == Colour.white) {
+        spaceClass = "white-space";
+    } else {
+        spaceClass = "black-space";
+    }
 
-    if (boardColour) { // black
-        return (
-        <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={imgSrc} alt="Queen" className="queen-piece"></img> 
-        </div>
-    );
-    } else { // white
     return (
-        <div className="board-space" style={{backgroundColor: "white"}}>
-            <img src={imgSrc} alt="Queen" className="queen-piece"></img>
+        <div className={"board-space " + spaceClass}>
+            <div className={"board-piece " + pieceClass}></div>
         </div>
-        );
-    }
+    )
 };
 
 

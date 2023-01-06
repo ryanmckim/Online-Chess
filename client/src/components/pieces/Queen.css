@@ -1,0 +1,7 @@
+.white-queen {
+    background-image: url('../../images/ChessPieces/WhitePieces/WhiteQueen.png');
+}
+
+.black-queen {
+    background-image: url('../../images/ChessPieces/BlackPieces/BlackQueen.png');
+}

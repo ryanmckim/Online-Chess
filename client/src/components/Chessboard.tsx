@@ -5,6 +5,11 @@ import {Type} from '../models/piece';
 import {Colour} from '../models/piece';
 import Piece from '../models/piece';
 import Square from "../models/square";
+import King from "./pieces/King";
+import Queen from "./pieces/Queen";
+import Bishop from "./pieces/Bishop";
+import Knight from "./pieces/Knight";
+import Rook from "./pieces/Rook";
 import Pawn from "./pieces/Pawn";
 import Blank from "./pieces/Blank";
 
@@ -30,15 +35,15 @@ const Chessboard = () => {
             case Type.pawn:
                 return <Pawn colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Pawn>
             case Type.rook:
-                return <h1>Rook</h1>
+                return <Rook colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Rook>
             case Type.knight:
-                return <h1>Knight</h1>
+                return <Knight colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Knight>
             case Type.bishop:
-                return <h1>Bishop</h1>
+                return <Bishop colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Bishop>
             case Type.king:
-                return <h1>King</h1>
+                return <King colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></King>
             case Type.queen:
-                return <h1>Queen</h1>
+                return <Queen colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Queen>
             default:
                 return <Blank boardColour={square.getColour()}></Blank>
         }

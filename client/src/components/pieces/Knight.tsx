@@ -1,36 +1,35 @@
 import "./Knight.css";
+import "./Piece.css"
 import React from "react";
 import {Colour} from "../../models/piece";
 
 type Props = {
-    colour : Colour|null,
+    colour : Colour|undefined,
     boardColour : Colour
 };
 
 const Knight = ({colour, boardColour} : Props) => {
 
-    let imgSrc;
+    let pieceClass;
+    let spaceClass;
 
-    if (colour) {
-        imgSrc = "../../../public/images/ChessPieces/BlackPieces/BlackKnight.png" // black
+    if (colour == Colour.white) {
+        pieceClass = "white-knight";
     } else {
-        imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteKnight.png" // white
+        pieceClass = "black-knight";
     }
 
-    
-    if (boardColour) { // black
-        return (
-        <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={imgSrc} alt="Knight" className="knight-piece"></img> 
-        </div>
-    );
-    } else { // white
-    return (
-        <div className="board-space" style={{backgroundColor: "white"}}>
-            <img src={imgSrc} alt="Knight" className="knight-piece"></img>
-        </div>
-        );
+    if (boardColour == Colour.white) {
+        spaceClass = "white-space";
+    } else {
+        spaceClass = "black-space";
     }
+
+    return (
+        <div className={"board-space " + spaceClass}>
+            <div className={"board-piece " + pieceClass}></div>
+        </div>
+    )
 };
 
 

@@ -1,36 +1,35 @@
 import "./Bishop.css";
+import "./Piece.css";
 import React from "react";
 import {Colour} from "../../models/piece";
 
 type Props = {
-    colour : Colour|null,
+    colour : Colour|undefined,
     boardColour : Colour
 };
 
 const Bishop = ({colour, boardColour} : Props) => {
 
-    let imgSrc;
+    let pieceClass;
+    let spaceClass;
 
-    if (colour) {
-        imgSrc = "../../../public/images/ChessPieces/BlackPieces/BlackBishop.png" // black
+    if (colour == Colour.white) {
+        pieceClass = "white-bishop";
     } else {
-        imgSrc = "../../../public/images/ChessPieces/WhitePieces/WhiteBishop.png" // white
+        pieceClass = "black-bishop";
     }
 
+    if (boardColour == Colour.white) {
+        spaceClass = "white-space";
+    } else {
+        spaceClass = "black-space";
+    }
 
-    if (boardColour) { // black
-        return (
-        <div className="board-space" style={{backgroundColor: "black"}}>
-            <img src={require(imgSrc)} alt="Bishop" className="bishop-piece"></img> 
-        </div>
-    );
-    } else { // white
     return (
-        <div className="board-space" style={{backgroundColor: "white"}}>
-            <img src={imgSrc} alt="Bishop" className="bishop-piece"></img>
+        <div className={"board-space " + spaceClass}>
+            <div className={"board-piece " + pieceClass}></div>
         </div>
-        );
-    }
+    )
 };
 
 
