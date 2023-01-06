@@ -14,6 +14,8 @@ export class Square {
         this.colour = colour;
     }
 
+    getColour() { return this.colour; }
+
     getCoord() { return [this.x, this.y]; }
 
     getPiece() { return this.piece; }

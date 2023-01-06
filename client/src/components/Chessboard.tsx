@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Chessboard.css";
 import Game from "../models/game";
 import {Type} from '../models/piece';
+import {Colour} from '../models/piece';
+import Piece from '../models/piece';
 import Square from "../models/square";
+import Pawn from "./pieces/Pawn";
+import Blank from "./pieces/Blank";
 
 const Chessboard = () => {
     const [board, setBoard] = useState<Square[][]>([[],[],[],[],[],[],[],[]]);
@@ -24,7 +28,7 @@ const Chessboard = () => {
     function determinePiece(square: Square) {
         switch (square.getPiece()?.getType()) {
             case Type.pawn:
-                return <h1>Pawn</h1>
+                return <Pawn colour={square.getPiece()?.getColour()} boardColour={square.getColour()}></Pawn>
             case Type.rook:
                 return <h1>Rook</h1>
             case Type.knight:
@@ -36,7 +40,7 @@ const Chessboard = () => {
             case Type.queen:
                 return <h1>Queen</h1>
             default:
-                return <h1>Blank</h1>
+                return <Blank boardColour={square.getColour()}></Blank>
         }
     }
 
